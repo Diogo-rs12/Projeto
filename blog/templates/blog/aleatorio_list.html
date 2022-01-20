@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for aleatorio in aleatorios %}
+        <div class="aleatorio">
+            <div class="date">
+            <p>published: {{ aleatorio.published_date }}</p>
+            </div>
+            <h2><a href="{% url 'aleatorio_detail' pk=aleatorio.pk %}">{{ aleatorio.title }}</a></h2>
+            <p>{{ aleatorio.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="aleatorio">
+        {% if aleatorio.published_date %}
+            <div class="date">
+                <p> Postado em {{ aleatorio.published_date }} por {{ aleatorio.author }}</p>
+            </div>
+        {% endif %}
+        <div>
+            <a class="retorno" href="{% url 'aleatoriedades' %}"> Voltar </a>
+        </div>
+        <div>
+            <h2>{{ aleatorio.title }}</h2>
+        </div>
+        <div class="linha"></div>
+        <br>
+        <p>{{ aleatorio.text|linebreaksbr }}</p>
+        <div class="linha"></div>
+        <br>
+        <div class="img">
+            <img src= "{{ aleatorio.image.url }}" class="img-responsive" style="width: 80%; float: left; margin-right: 10px;" />
+        </div>
+    
+{% endblock %}

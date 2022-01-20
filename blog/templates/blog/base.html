@@ -1,0 +1,52 @@
+{% load static %}
+<html>
+    <head>
+        <title>Random Imgpalper</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/site.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet" type="text/css"> 
+    </head>
+    <body>
+      <header>
+        <div class="page-header">
+            <h1><a href="/">Random <br>Imgpalper</a></h1>
+        </div>
+      </header>
+
+        <div class="menu">
+            <ul>
+                <li>
+                  <a href = "{% url 'home' %}"> Home </a>
+                </li>
+                <li>
+                  <a href = "{% url 'post_list' %}"> Posts </a>
+                </li>
+                <li>
+                  <a href = "{% url 'curiosidades' %}"> Curiosidades </a>
+                </li>
+                <li>
+                  <a href = "{% url 'aleatoriedades' %}"> Aleatoriedades </a>
+                </li>
+            </ul>
+        </div>
+
+      <section class="conteudo">
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <hr> 
+      <div class="linha"></div> 
+      <footer class="rodape">
+        
+            <p>Random Imgpalper @ {%now "Y"%}</p>
+          </footer>
+    </body>
+</html>

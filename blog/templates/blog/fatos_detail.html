@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="fato">
+        {% if fato.published_date %}
+            <div class="date">
+                <p> Postado em {{ fato.published_date }} por {{ fato.author }}</p>
+            </div>
+        {% endif %}
+        <div>
+            <a class="retorno" href="{% url 'curiosidades' %}"> Voltar </a>
+        </div>
+        <div>
+            <h2>{{ fato.title }}</h2>
+        </div>
+        <div class="linha"></div>
+        <br>
+        <p>{{ fato.text|linebreaksbr }}</p>
+        <div class="linha"></div>
+        <br>
+        <div class="img">
+            <img src= "{{ fato.image.url }}" class="img-responsive" style="width: 80%; float: left; margin-right: 10px;" />
+        </div>
+
+    </div>
+{% endblock %}
